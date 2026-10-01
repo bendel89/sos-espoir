@@ -624,9 +624,14 @@ document.getElementById("btnBreath").addEventListener("click",function(){
 const btnB2=document.getElementById("btnBreath2");
 if(btnB2){
   btnB2.addEventListener("click",function(){
-    const c=document.getElementById("breathCircle");
-    if(!c){alert("Ouvre l'onglet Crise pour voir le cercle de respiration");switchTab("crise");return}
-    lancerRespiration("breathCircle","btnBreath");
+    switchTab("crise");
+    setTimeout(function(){
+      const circle=document.getElementById("breathCircle");
+      if(circle){
+        circle.scrollIntoView({behavior:"smooth",block:"center"});
+        lancerRespiration("breathCircle","btnBreath");
+      }
+    },200);
   });
 }
 
