@@ -500,9 +500,8 @@ function afficherTresors(){
   }
   z.innerHTML=list.map(function(t,i){
     const d=new Date(t.date);
-    return '<div class="card">'+
-      '<button class="delete" data-type="tresor" data-i="'+i+'" style="position:absolute;top:1rem;right:1rem;background:transparent;border:none;color:#e07070;font-size:1.2rem;cursor:pointer">×</button>'+
-      '<h3>💎 '+t.titre+'</h3>'+
+    return '<div class="card" style="position:relative">'+
+  '<h3>💎 '+t.titre+' <button class="delete" data-type="tresor" data-i="'+i+'" style="background:transparent;border:none;color:#e07070;font-size:1.4rem;cursor:pointer;float:right;padding:0;line-height:1">×</button></h3>'+
       '<p>'+t.texte+'</p>'+
       '<small style="color:#4a5578;font-size:0.7rem">Ajouté le '+d.toLocaleDateString("fr-CH")+'</small>'+
     '</div>';
